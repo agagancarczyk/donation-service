@@ -17,7 +17,7 @@ public class AdminPanel extends Controller {
         User user = Accounts.getCurrentUser();
         List<Candidate> candidates = Candidate.findAll();
         List<User> users = User.findAll();
-        List<User> filteredUsers = new ArrayList<>(users);
+        List<User> filteredUsers = new ArrayList<User>(users);
         users.remove(user);
         Logger.info("users size: " + users.size());
         Logger.info("candidates size: " + candidates.size());
