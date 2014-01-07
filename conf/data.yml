@@ -1,0 +1,122 @@
+Admin(adnim):
+    username: admin
+    firstName: admin
+    lastName : admin
+    email : admin
+    password : secret
+    age : 99
+    addressLineOne : admin
+    addressLineTwo : admin
+    country : Ireland
+    region : Europe
+    mobile : 9999999  
+               
+Candidate(one):
+    firstName: James
+    lastName: Boyd
+    office: Mayor
+   
+Candidate(two):
+    firstName: Barrack
+    lastName: Obama
+    office: President
+
+Candidate(three):
+    firstName: Bob
+    lastName: Casey
+    office: Senator
+    
+Candidate(four):
+    firstName: Charles
+    lastName: Daly
+    office: Chief Justice
+    
+Donation(a):
+    amount : 210
+    method : paypal
+    candidate : one
+    
+Donation(b):
+    amount : 20
+    method : direct
+    candidate : four
+
+    
+Donation(c):
+    amount : 330
+    method : direct
+    candidate : one
+        
+Donation(d):
+    amount : 160
+    method : paypal 
+    candidate : two
+
+Donation(e):
+    amount : 710
+    method : paypal
+    candidate : two
+    
+Donation(f):
+    amount : 265
+    method : direct
+    candidate : one
+    
+Donation(g):
+    amount : 453
+    method : direct
+    candidate : one
+        
+Donation(h):
+    amount : 104
+    method : paypal 
+    candidate : three
+
+User(homer):
+    firstName : Homer
+    lastName : Simpson
+    email : homer@simpson.com
+    password : secret
+    age : 45
+    addressLineOne : Green Street
+    addressLineTwo : Ellerton
+    country : Barbados
+    region : Central America and the Caribbean
+    mobile : 1234567
+    donations : 
+               - a
+    candidates :
+               - four
+    
+User(marge):
+    firstName: Marge
+    lastName : Simpson
+    email : marge@simpson.com
+    password : secret
+    age : 40
+    addressLineOne : Apple Road
+    addressLineTwo : Springfield
+    country : Canada
+    region : North America
+    mobile : 1564645  
+    donations : 
+               - b
+               - d
+               
+User(lisa):
+    firstName: Lisa
+    lastName : Simpson
+    email : lisa@simpson.com
+    password : secret
+    age : 20
+    addressLineOne : Apple Road
+    addressLineTwo : Waterford
+    country : Ireland
+    region : Europe
+    mobile : 7888885  
+    donations : 
+               - f
+               - g
+    candidates : 
+               - one
+    

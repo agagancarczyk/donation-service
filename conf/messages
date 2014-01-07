@@ -1,0 +1,15 @@
+# Validation messages
+validation.required=%s is required
+validation.minSize=%s length must be longer than %d
+validation.range=%s must be between %d and %d
+validation.email=%s is not a correct email. 
+validation.match=%s does't match.
+
+# Field names
+firstName=First name
+lastName=Last name
+email=Email
+password=Password
+age=Age
+addressLineOne=Address line 1
+addressLineTwo=Address line 2

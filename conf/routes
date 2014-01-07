@@ -1,0 +1,69 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# API - Users
+
+GET     /api/users                           UsersAPI.users
+GET     /api/users/{id}                      UsersAPI.user
+POST    /api/users                           UsersAPI.createUser
+DELETE  /api/users/{id}                      UsersAPI.deleteUser
+
+#API - Edit
+POST    /api/edit                            EditAPI.editUser
+
+# API - Donations
+
+GET     /api/users/{userId}/donations        DonationsAPI.donations
+GET     /api/users/{userId}/donations/{id}   DonationsAPI.donation
+POST    /api/users/{userId}/donations        DonationsAPI.createDonation
+DELETE  /api/users/{userId}/donations/{id}   DonationsAPI.deleteDonation
+
+# API - Candidates
+
+GET     /api/candidates                      CandidatesAPI.candidates
+GET     /api/candidates/{id}                 CandidatesAPI.candidate
+POST    /api/candidates                      CandidatesAPI.createCandidate
+DELETE  /api/candidates/{id}                 CandidatesAPI.deleteCandidate
+
+# API - Admins
+GET     /api/admins                          AdminsAPI.admins
+GET     /api/admins/{id}                     AdminsAPI.admin
+POST    /api/admins                          AdminsAPI.createAdmin
+DELETE  /api/admins/{id}                     AdminsAPI.deleteAdmin
+
+
+# UI
+
+# Home page
+GET      /                                   Accounts.index
+
+# Accounts page
+GET    /signup                               Accounts.signup
+GET    /login                                Accounts.login
+GET    /logout                               Accounts.logout
+POST   /authenticate                         Accounts.authenticate
+POST   /register                             Accounts.register
+
+# Donation page
+GET    /donation                             DonationController.index
+POST   /donation/donate                      DonationController.donate
+GET    /donation/report                      DonationController.renderReport
+POST   /donation/report                      DonationController.renderReport
+
+# Edit page
+GET    /edit                                 EditProfile.index
+POST   /edit			 					 EditProfile.editDetails
+
+# AdminPanel page
+GET    /index                     			 AdminPanel.index
+GET    /createCandidate           			 AdminPanel.createCandidate
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

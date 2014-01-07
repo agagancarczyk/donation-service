@@ -1,0 +1,67 @@
+/* Donation stylesheet */
+
+body {
+  background-color: #A3CCCC;
+  color: #005c7a;
+}
+      
+.jumbotron, .well {
+  background-color: #D5ECF2;
+}
+     
+h2#log, h2#reg, h4 {
+  text-align: center;      
+}
+      
+.newIncome {
+  backgroud-color: #005c7a;
+}
+      
+.dateContainer, .balanceContainer, .operationsContainer, .row.marketing {
+  text-align: center;
+}
+      
+.btn-primary, legend, .well.small {
+  background-color: #2DA3B5;
+  color: white;
+}
+      
+h2#income, .footer {
+  text-align: center;
+}
+      
+.btn-primary:hover {
+  background-color: #005c7a;
+  border-color: #005c7a;
+}
+      
+legend#account, legend#option, h4#account {
+  text-align: center;
+  border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* Error handling*/
+
+label.control-label {
+	font-weight:bold;
+}
+
+.error {
+	color: #c00;
+}
+
+input.hasError {
+	background: #FFA3AC;
+}
+
+.alert.alert-warning {
+	background: #E60000;
+}
+
+h2#alert, p#alert {
+	color: white; 
+}
+  

@@ -1,0 +1,112 @@
+#{extends 'main.html' /}
+#{set title:'Admin Panel' /} 
+#{include 'nav/navopen.html' /}
+  <li><a href="/createCandidate">Create Candidate</a>
+  <li><a href="/logout">Logout</a></li>
+#{include 'nav/navclose.html' /}
+   
+<!-- Test -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="well">
+        <form class="form-horizontal" action="/adminpanel/index" method="POST">   
+          <legend id="account">Filters for Donations</legend>
+          <div class="form-group">
+            <label for="donorsId" class="col-lg-4 control-label">Select Donor</label>
+            <div class="col-lg-5">
+		      <select multiple class="form-control" name="donorsId">
+		        #{list items:users, as:'user'}
+                  <option>${user.id}. ${user.firstName} ${user.lastName}</option>
+                #{/list}
+			  </select>
+			</div>
+		    <label for="donorsAge" class="col-lg-5 control-label">Select Donor's Age </label>
+		    <div class="col-lg-4">
+		      <select multiple class="form-control" name="donorsAge">
+			    <option>18-25</option>
+                <option>26-35</option>
+                <option>36-45</option>
+                <option>46-55</option>
+                <option>56-65</option>
+              </select>
+		    </div>  
+            <label for="donorsRegion" class="col-lg-4 control-label">Select Donor's Region </label>
+		    <div class="col-lg-5">
+		      <select multiple class="form-control" name="donorsRegion">
+			    <option>Asia</option>
+                <option>Middle East, North Africa and Greater Arabia</option>
+                <option>Europe</option>
+                <option>North America</option>
+                <option>Central America and the Caribbean</option>
+                <option>South America</option>
+                <option>Sub-Saharan Africa</option>
+                <option>Australia and Oceania</option>
+              </select>
+		    </div>
+		    <label for="candidateId" class="col-lg-4 control-label">Select Candidate </label>
+		    <div class="col-lg-5">
+		      <select multiple class="form-control" name="candidateId">
+			    #{list items:candidates, as:'candidate'}
+                  <option>${candidate.id}. ${candidate.firstName} ${candidate.lastName} ${candidate.office}</option>
+                #{/list}
+              </select>
+		    </div>
+		    <div class="col-lg-5"></div>
+              <div class="col-lg-2"><br>
+			    <button type="submit" class="btn btn-primary">Apply Filter</button>
+		   	  </div>
+		   	</div>
+          </form>
+        </div>
+      </div>
+   </div>
+</div><br>
+ 
+<!-- Report rendering Start-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="well">
+        <div class="small well">
+          <h4>List of Donors, Candidates and Donations</h4>
+        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Address</th>
+              <th>Candidate</th>
+              <th>Amount ($)</th>
+              <th>Method donated</th>
+            </tr>
+          </thead>
+          <tbody>
+            #{list items:filteredUsers, as:'user'}
+            #{list items:user.donations, as:'donation'}
+			  #{if candidateId == 0 || candidateId == donation.candidate.id}
+                <tr>
+                  <td>${user.firstName} ${user.lastName}</td>
+                  <td>${user.email}</td>
+                  <td>${user.age}</td>
+                  <td>${user.addressLineOne} ${user.addressLineTwo} ${user.country} ${user.region}</td>
+                  <td>${donation.candidate}</td>
+                  <td>${donation.amount}</td>
+                  <td>${donation.method}</td>
+                </tr>
+              #{/if}
+            #{/list}
+            #{/list}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Report rendering End -->
+<div class="footer">
+  <p>&copy; Donation 1.0 | Built with Bootstrap 3 and Play! 1.2.7 | Designed and built for everyone.</p>
+</div>
