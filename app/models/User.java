@@ -44,7 +44,6 @@ public class User extends Model
     this.lastName = lastName;
     this.email = email;
     this.password = BCrypt.hashpw(password, BCrypt.gensalt(12));
-    
     this.age = age;
     this.addressLineOne = addressLineOne;
     this.addressLineTwo = addressLineTwo;

@@ -3,7 +3,7 @@ Admin(admin):
     firstName: admin
     lastName : admin
     email : admin
-    password : $2a$12$lc9WpPcw2fIRDC8zGKue1.LqIntwK/23Fjsx3bBPEuOxrgc8.Wa/S
+    password : secret
     age : 99
     addressLineOne : admin
     addressLineTwo : admin
