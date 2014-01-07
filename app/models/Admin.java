@@ -9,7 +9,7 @@ import play.db.jpa.Model;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="my_admin")
+//@Table(name="my_admin")
 public class Admin extends User
 {
     public String username;
