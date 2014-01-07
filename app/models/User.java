@@ -3,6 +3,7 @@ package models;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.Valid;
 
 import controllers.BCrypt;
@@ -18,6 +19,7 @@ import play.db.jpa.Model;
 
 @SuppressWarnings("serial")
 @Entity
+@Table(name="my_user")
 public class User extends Model
 {
     @Required @MinSize(3) public String firstName;
