@@ -35,14 +35,14 @@
           <div class="form-group">
             <label for="firstName" class="col-lg-3 control-label">First Name</label>
             <div class="col-lg-9">
-              <input type="text" class="form-control" name="firstName" placeholder="Your First Name" size="15" autocomplete=off value="${params['firstName']}" class="#{errorClass 'firstName' /}" required>
+              <input type="text" class="form-control" name="firstName" placeholder="Your First Name" size="15" autocomplete=off value="${user.firstName}" class="#{errorClass 'firstName' /}" required>
               <span class="error">#{error 'firstName' /}</span> 
             </div>
           </div>
           <div class="form-group">
             <label for="lastName" class="col-lg-3 control-label">Last Name</label>
             <div class="col-lg-9">
-              <input type="text" class="form-control" name="lastName" placeholder="Your Last Name" size="15" autocomplete=off value="${params['lastName']}" class="#{errorClass 'lastName' /}" required>
+              <input type="text" class="form-control" name="lastName" placeholder="Your Last Name" size="15" autocomplete=off value="${user.lastName}" class="#{errorClass 'lastName' /}" required>
               <span class="error">#{error 'lastName' /}</span> 
             </div>
           </div>
@@ -51,7 +51,7 @@
             <div class="col-lg-9">
               <div class="input-group">
                 <span class="input-group-addon">@</span>
-                <input type="text" class="form-control" name="email" placeholder="Your Email" size="25" autocomplete=off value="${params['email']}" class="#{errorClass 'email' /}" required>
+                <input type="text" class="form-control" name="email" placeholder="Your Email" size="25" autocomplete=off value="${user.email}" class="#{errorClass 'email' /}" required>
               </div>
               <span class="error">#{error 'email' /}</span> 
             </div>
@@ -59,32 +59,33 @@
           <div class="form-group">
             <label for="password" class="col-lg-3 control-label">Password</label>
             <div class="col-lg-9">
-              <input type="password" class="form-control" name="password" placeholder="Your Password"  size="10" autocomplete=off value="${params['password']}" class="#{errorClass 'password' /}" required>
+              <input type="password" class="form-control" size="10" autocomplete=off value="${user.password}" class="#{errorClass 'password' /}" required>
               <span class="error">#{error 'password' /}</span>
             </div>
           </div>
           <div class="form-group">
             <label for="age" class="col-lg-3 control-label">Age</label>
             <div class="col-lg-9">
-              <input type="text" class="form-control" name="age" placeholder="Your Age" size="2" autocomplete=off value="${params['age']}" class="#{errorClass 'age' /}" required>
+              <input type="text" class="form-control" name="age" placeholder="Your Age" size="2" autocomplete=off value="${user.age}" class="#{errorClass 'age' /}" required>
               <span class="error">#{error 'age' /}</span>  
             </div>
           </div>
           <div class="form-group">
             <label for="address" class="col-lg-3 control-label">Address</label>
             <div class="col-lg-5">
-              <input type="text" class="form-control" name="addressLineOne" placeholder="Address Line 1" size="20" autocomplete=off value="${params['addressLineOne']}" class="#{errorClass 'addressLineOne' /}" required>
+              <input type="text" class="form-control" name="addressLineOne" placeholder="Address Line 1" size="20" autocomplete=off value="${user.addressLineOne}" class="#{errorClass 'addressLineOne' /}" required>
               <span class="error">#{error 'addressLineOne' /}</span>  
             </div>
               <div class="col-lg-4">
-              <input type="text" class="form-control" name="addressLineTwo" placeholder="Address Line 2" size="20" autocomplete=off value="${params['addressLineTwo']}" class="#{errorClass 'addressLineTwo' /}" required>
+              <input type="text" class="form-control" name="addressLineTwo" placeholder="Address Line 2" size="20" autocomplete=off value="${user.addressLineTwo}" class="#{errorClass 'addressLineTwo' /}" required>
               <span class="error">#{error 'addressLineTwo' /}</span>  
             </div>
           </div>
           <div class="form-group">
           <label for="country" class="col-lg-3 control-label">Country/Region</label>
             <div class="col-lg-5">
-		      <select type="text" class="form-control" name="country">
+		      <select type="text" class="form-control" name="country" value="${user.country}">
+			    <option value="${user.country}">${user.country}</option>
 			    <option value="af">Afghanistan</option>
 				<option value="ax">Aland Islands</option>
 				<option value="al">Albania</option>
@@ -333,6 +334,7 @@
 		    </div>	
 		    <div class="col-lg-4">
 		      <select type="text" class="form-control" name="region">
+			    <option value="${user.region}">${user.region}</option>
 			    <option value="a">Asia</option>
                 <option value="b">Middle East, North Africa and Greater Arabia</option>
                 <option value="c">Europe</option>

@@ -21,13 +21,13 @@ public class Accounts extends Controller {
             @Valid String addressLineOne, @Valid String addressLineTwo, String country,
             String region) {
         
-        validation.match(firstName, "[A-Za-z]+"); // Alphabetic characters only
-        validation.match(lastName, "[A-Za-z]+"); // Alphabetic characters only
-        validation.email(email); // Email address containing @
-        validation.match(password, "^(?=.*?[0-9].*?[0-9])(?=.*[!@#$%])[0-9a-zA-Z!@#$%0-9]{8,}$"); // Password at least 8 characters long with at least 2 digits and 2 special characters
-        validation.range(age, 18, 120); // Age between 18 and 120
-        validation.match(addressLineOne, "^[A-Za-z0-9 -]*[A-Za-z0-9][A-Za-z0-9 -]*$"); // Address containing capital and lowercase letters and "-" sign
-        validation.match(addressLineTwo, "^[A-Za-z0-9 -]*[A-Za-z0-9][A-Za-z0-9 -]*$"); // Address containing capital and lowercase letters and "-" sign
+            validation.match(firstName, "[A-Za-z]+"); // Alphabetic characters only
+            validation.match(lastName, "[A-Za-z]+"); // Alphabetic characters only
+            validation.email(email); // Email address containing @
+            validation.match(password, "^(?=.*?[0-9].*?[0-9])(?=.*[!@#$%])[0-9a-zA-Z!@#$%0-9]{8,}$"); // Password at least 8 characters long with at least 2 digits and 2 special characters
+            validation.range(age, 18, 120); // Age between 18 and 120
+            validation.match(addressLineOne, "^[A-Za-z0-9 -]*[A-Za-z0-9][A-Za-z0-9 -]*$"); // Address containing capital and lowercase letters and "-" sign
+            validation.match(addressLineTwo, "^[A-Za-z0-9 -]*[A-Za-z0-9][A-Za-z0-9 -]*$"); // Address containing capital and lowercase letters and "-" sign
         
      // Handle errors
         if(validation.hasErrors()) {
@@ -70,7 +70,7 @@ public class Accounts extends Controller {
         Logger.info("User: " + user);
         if ((user != null) && (user.checkPassword(password) == true)) {
             Logger.info("Successfull authentication of  " + user.firstName
-                    + " " + user.lastName);
+                    + " " + user.lastName + " " + user.password);
             session.put("logged_in_userid", user.id);
             if (user instanceof models.Admin) AdminPanel.index(null, null,-1,-1);
             else DonationController.index();

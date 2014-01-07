@@ -25,10 +25,10 @@ public class User extends Model
     @Required @MinSize(3) public String firstName;
     @Required @MinSize(3) public String lastName;
     @Required @Email public String email;
-    @Required @MinSize(4) public String password;
+    @Required @MinSize(2) public String password;
     @Required @Range(min=18, max=120) public int age; 
-    @Required @MinSize(5) public String addressLineOne; 
-    @Required @MinSize(5) public String addressLineTwo;
+    @Required @MinSize(3) public String addressLineOne; 
+    @Required @MinSize(3) public String addressLineTwo;
     @Required public String country;
     @Required public String region; 
   

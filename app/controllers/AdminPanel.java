@@ -65,13 +65,12 @@ public class AdminPanel extends Controller {
         render(users, filteredUsers,candidates,candidateId);
     }
     
-    public static void createCandidate(@Valid String firstName, @Valid String lastName, @Valid String office)
+    public static void createCandidate(@Valid String firstName, @Valid String lastName, String office)
     {
         Candidate createdCand = new Candidate(firstName, lastName, office);
         
         validation.match(firstName, "[A-Za-z]+"); // Alphabetic characters only
         validation.match(lastName, "[A-Za-z]+"); // Alphabetic characters only
-        validation.match(office, "[A-Za-z]+"); // Alphabetic characters only
         
      // Handle errors
         if(validation.hasErrors()) {

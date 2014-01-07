@@ -3,7 +3,7 @@ Admin(adnim):
     firstName: admin
     lastName : admin
     email : admin
-    password : secret
+    password : $2a$12$lc9WpPcw2fIRDC8zGKue1.LqIntwK/23Fjsx3bBPEuOxrgc8.Wa/S
     age : 99
     addressLineOne : admin
     addressLineTwo : admin
@@ -76,7 +76,7 @@ User(homer):
     firstName : Homer
     lastName : Simpson
     email : homer@simpson.com
-    password : secret
+    password : $2a$12$lc9WpPcw2fIRDC8zGKue1.LqIntwK/23Fjsx3bBPEuOxrgc8.Wa/S
     age : 45
     addressLineOne : Green Street
     addressLineTwo : Ellerton
@@ -92,7 +92,7 @@ User(marge):
     firstName: Marge
     lastName : Simpson
     email : marge@simpson.com
-    password : secret
+    password : $2a$12$lc9WpPcw2fIRDC8zGKue1.LqIntwK/23Fjsx3bBPEuOxrgc8.Wa/S
     age : 40
     addressLineOne : Apple Road
     addressLineTwo : Springfield
@@ -107,7 +107,7 @@ User(lisa):
     firstName: Lisa
     lastName : Simpson
     email : lisa@simpson.com
-    password : secret
+    password : $2a$12$lc9WpPcw2fIRDC8zGKue1.LqIntwK/23Fjsx3bBPEuOxrgc8.Wa/S
     age : 20
     addressLineOne : Apple Road
     addressLineTwo : Waterford
@@ -119,4 +119,3 @@ User(lisa):
                - g
     candidates : 
                - one
-    
