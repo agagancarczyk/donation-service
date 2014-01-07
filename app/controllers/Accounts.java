@@ -24,7 +24,8 @@ public class Accounts extends Controller {
             validation.match(firstName, "[A-Za-z]+"); // Alphabetic characters only
             validation.match(lastName, "[A-Za-z]+"); // Alphabetic characters only
             validation.email(email); // Email address containing @
-            validation.match(password, "^(?=.*?[0-9].*?[0-9])(?=.*[!@#$%])[0-9a-zA-Z!@#$%0-9]{8,}$"); // Password at least 8 characters long with at least 2 digits and 2 special characters
+//            validation.match(password, "^(?=.*?[0-9].*?[0-9])(?=.*[!@#$%])[0-9a-zA-Z!@#$%0-9]{8,}$"); // Password at least 8 characters long with at least 2 digits and 2 special characters
+            validation.minSize(password, 4);
             validation.range(age, 18, 120); // Age between 18 and 120
             validation.match(addressLineOne, "^[A-Za-z0-9 -]*[A-Za-z0-9][A-Za-z0-9 -]*$"); // Address containing capital and lowercase letters and "-" sign
             validation.match(addressLineTwo, "^[A-Za-z0-9 -]*[A-Za-z0-9][A-Za-z0-9 -]*$"); // Address containing capital and lowercase letters and "-" sign
