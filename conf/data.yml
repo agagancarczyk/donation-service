@@ -1,4 +1,4 @@
-Admin(adnim):
+Admin(admin):
     username: admin
     firstName: admin
     lastName : admin
@@ -41,7 +41,6 @@ Donation(b):
     method : direct
     candidate : four
 
-    
 Donation(c):
     amount : 330
     method : direct
